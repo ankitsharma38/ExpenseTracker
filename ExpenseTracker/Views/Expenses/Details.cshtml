@@ -1,0 +1,87 @@
+﻿@model ExpenseTracker.Models.Expense
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<!-- Custom styles for better aesthetics -->
+<style>
+    body {
+        background-color: #ffffff; /* White background for simplicity */
+        font-family: 'Arial', sans-serif; /* Clean font */
+        color: #333; /* Dark text for readability */
+    }
+
+    .container {
+        margin-top: 50px; /* Spacing above the container */
+    }
+
+    h2 {
+        text-align: center; /* Center the main title */
+        color: #007bff; /* Blue color for the title */
+    }
+
+    .details-card {
+        background-color: #f9f9f9; /* Light background for details card */
+        border-radius: 10px; /* Rounded corners */
+        padding: 30px; /* Padding inside the card */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    }
+
+    dl {
+        margin-bottom: 0; /* Remove margin below description list */
+    }
+
+    dt {
+        font-weight: bold; /* Bold for term */
+        color: #495057; /* Darker color for terms */
+    }
+
+    dd {
+        margin-left: 0; /* Align description terms with their definition */
+        margin-bottom: 20px; /* Space below each description */
+        padding-left: 10px; /* Indentation for descriptions */
+        border-left: 3px solid #007bff; /* Blue line for description */
+    }
+
+    .action-links {
+        text-align: center; /* Center action links */
+        margin-top: 20px; /* Space above action links */
+    }
+
+    .btn-link {
+        color: #007bff; /* Link color */
+        text-decoration: none; /* No underline */
+    }
+
+        .btn-link:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+</style>
+
+<div class="container">
+    <h2>@ViewBag.Title</h2>
+
+    <div class="details-card">
+        <h4>Expense Details</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(model => model.Title)</dt>
+            <dd>@Html.DisplayFor(model => model.Title)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Amount)</dt>
+            <dd>@Html.DisplayFor(model => model.Amount)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Date)</dt>
+            <dd>@Html.DisplayFor(model => model.Date)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Description)</dt>
+            <dd>@Html.DisplayFor(model => model.Description)</dd>
+        </dl>
+    </div>
+
+    <div class="action-links">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-link" }) |
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-link" })
+    </div>
+</div>

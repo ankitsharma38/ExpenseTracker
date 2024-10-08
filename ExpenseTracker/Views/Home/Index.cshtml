@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "Expense Tracker Home";
+}
+
+<!-- Custom styles for a modern look -->
+<style>
+    .jumbotron {
+        background-color: #f8f9fa;
+        padding: 50px;
+        text-align: center;
+        margin-top:40px;
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .jumbotron h1 {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .jumbotron p.lead {
+            font-size: 1.25rem;
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+
+        .jumbotron .btn-primary {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+        }
+
+    .feature-section {
+        margin-top: 40px;
+    }
+
+        .feature-section h3 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .feature-section p {
+            color: #6c757d;
+            font-size: 1rem;
+        }
+
+    .btn-default {
+        background-color: #f8f9fa;
+        border-color: #007bff;
+        color: #007bff;
+    }
+
+        .btn-default:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+    .card {
+        padding: 20px;
+        background-color: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+    .col-md-4 {
+        flex: 0 0 30%;
+        margin-bottom: 30px;
+    }
+</style>
+
+<div class="jumbotron">
+    <h1>Expense Tracker</h1>
+    <p class="lead">Easily manage and track your expenses with our simple and intuitive platform.</p>
+    <p>Monitor your spending, categorize expenses, and stay on top of your financial goals.</p>
+    <p><a href="@Url.Action("Create", "Expenses")" class="btn btn-primary btn-lg">Start Tracking Expenses &raquo;</a></p>
+</div>
+
+<div class="feature-section row">
+    <div class="col-md-4">
+        <div class="card">
+            <h3>Track Your Expenses</h3>
+            <p>
+                Quickly log and categorize all your expenses in one place. Keep your financial life organized and get a clear overview of your spending habits.
+            </p>
+            <p><a class="btn btn-default" href="@Url.Action("Index", "Expenses")">View Expense List &raquo;</a></p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <h3>Manage Categories</h3>
+            <p>Organize your expenses into categories like food, travel, or utilities to better understand your spending patterns.</p>
+            <p><a class="btn btn-default" href="@Url.Action("Index", "Categories")">Manage Categories &raquo;</a></p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <h3>Generate Reports</h3>
+            <p>Analyze your spending with detailed reports and charts. Track your financial progress over time to make informed decisions.</p>
+            <p><a class="btn btn-default" href="@Url.Action("GenerateReport", "Reports")">Generate Report &raquo;</a></p>
+        </div>
+    </div>
+</div>
